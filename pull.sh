@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/usr/bin/git checkout . && /usr/bin/git fetch origin master && /usr/bin/git reset --hard origin/master && /usr/bin/git pull -u origin master
+/usr/bin/git checkout . && /usr/bin/git fetch origin main && /usr/bin/git reset --hard origin/main && /usr/bin/git pull -u origin main
 
 
 echo "go-tp update"
