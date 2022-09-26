@@ -19,7 +19,7 @@ jobs:
         gitbook install
         npm install -g gitbook-summary
     - name: clone docs
-      run |
+      run: |
         git clone -b main https://github.com/go-tp/docs.git docs
         cd docs
     - name: generate gitbook folder
