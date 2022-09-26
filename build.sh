@@ -2,7 +2,5 @@
 
 rm -rf _book
 gitbook build
-cd _book
-cp -r -f * ../
-cd ..
+mv -r -f _book/* ../
 rm -rf _book
