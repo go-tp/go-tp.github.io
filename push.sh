@@ -10,4 +10,4 @@ fi
 
 git add *
 git commit -m"$a"
-git push -u origin main
+git pull origin master --allow-unrelated-histories
