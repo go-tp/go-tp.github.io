@@ -1,2 +1,3 @@
 # go-tp 
-## https://go-tp.com
+
+## Documentations for go-tp please see to: [docs](https://github.com/go-tp/docs)
