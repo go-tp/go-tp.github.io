@@ -23,7 +23,7 @@ jobs:
     - name: clone docs
       run: |
         git clone -b main https://github.com/go-tp/docs.git docs-temp
-        cd docs
+        cd docs-temp
     - name: downloads plug-in
       run: |
         gitbook install
@@ -32,7 +32,9 @@ jobs:
         gitbook build
     - name: copy and del file
       run: |
-        cp -r -f _book/* ../
+        cd _book
+        cp -r -f * ../../
+        cd ../
         cp -f SUMMARY.md ../
         cd ../
         rm -rf docs-temp
