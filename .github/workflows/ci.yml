@@ -16,15 +16,16 @@ jobs:
     - name: configue gitbook
       run: |
         npm install -g gitbook-cli
-        gitbook install
         npm install -g gitbook-summary
     - name: clone docs
       run: |
         git clone -b main https://github.com/go-tp/docs.git docs
         cd docs
+    - name: downloads plug-in
+      run: |
+        gitbook install
     - name: generate gitbook folder
       run: |
-        book sm
         gitbook build
     - name: copy and del file
       run: |
