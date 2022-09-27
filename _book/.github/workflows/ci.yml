@@ -22,7 +22,7 @@ jobs:
         npm install -g gitbook-summary
     - name: clone docs
       run: |
-        git clone -b main https://github.com/go-tp/docs.git docs
+        git clone -b main https://github.com/go-tp/docs.git docs-temp
         cd docs
     - name: downloads plug-in
       run: |
@@ -35,7 +35,7 @@ jobs:
         cp -r -f _book/* ../
         cp -f SUMMARY.md ../
         cd ../
-        rm -rf docs
+        rm -rf docs-temp
     - name: Commit files
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
