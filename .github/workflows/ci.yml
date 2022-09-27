@@ -23,22 +23,18 @@ jobs:
     - name: clone docs
       run: |
         git clone -b main https://github.com/go-tp/docs.git docs-temp
-        cd docs-temp
     - name: downloads plug-in
       run: |
+        cd docs-temp
         gitbook install
-    - name: generate gitbook folder
+    - name: generate gitbook
       run: |
         gitbook build
     - name: copy and del file
       run: |
-        cd _book
-        cp -r -f * ../../
-        cd ../
-        cp -f SUMMARY.md ../
-        cd ../
+        cp -r -f docs-temp/_book/* ./
+        cp -f docs-temp/SUMMARY.md ./
         rm -rf docs-temp
-        tree -a
     - name: Commit files
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
