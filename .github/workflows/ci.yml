@@ -29,6 +29,7 @@ jobs:
         gitbook install
     - name: generate gitbook
       run: |
+        cd docs-temp
         gitbook build
     - name: copy and del file
       run: |
