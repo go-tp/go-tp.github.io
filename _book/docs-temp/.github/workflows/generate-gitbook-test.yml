@@ -1,0 +1,28 @@
+name: generate-gitbook-test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  main-to-gh-pages:
+    runs-on: ubuntu-latest
+    steps:                          
+    - name: checkout main
+      uses: actions/checkout@v2
+      with:
+        ref: main
+    - name: install nodejs
+      uses: actions/setup-node@v1
+    - name: configue gitbook
+      run: |
+        npm install -g gitbook-cli
+        gitbook install
+        npm install -g gitbook-summary
+    - name: generate gitbook folder
+      run: |
+        gitbook build
+    - name: file list
+      run: |
+        tree -a _book
