@@ -1,7 +1,10 @@
 name: auto-generate-gitbook
 on:
-  schedule:
-    - cron: '0 20 * * *'
+ push:
+    branches:
+      - main
+ schedule:
+  - cron: '0 20 * * *'
 
 jobs:
   main-to-gh-pages:
